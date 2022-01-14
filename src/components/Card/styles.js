@@ -34,7 +34,7 @@ const Styled = {
     border-radius: 16px;
     width: 100%;
     color: ${theme.colors.light};
-    background-color: ${(p) => p.variant};
+    background-color: ${(p) => p.variant ? p.variant : `transparent`};
 
     ${(p) => p.customStyle && { ...p.customStyle }}
   `,

@@ -39,7 +39,7 @@ const Styled = {
     gap: 24px;
 
     a:hover {
-      color: ${(p) => p.variant};
+      color: ${(p) => p.variant ? p.variant : `transparent`};
     }
 
     @media (max-width: 768px) {
@@ -64,7 +64,7 @@ const Styled = {
 
     &.configBtn {
       border-radius: 50%;
-      background: ${(p) => p.variant};
+      background: ${(p) => p.variant ? p.variant : `transparent`};
       padding: 8px;
     }
   `,
@@ -89,7 +89,7 @@ const Styled = {
     font-size: 24px;
 
     svg {
-      color: ${(p) => p.variant};
+      color: ${(p) => p.variant ? p.variant : `transparent`};
       animation: ${rotate} 6s infinite;
       margin: 0 -4px;
     }

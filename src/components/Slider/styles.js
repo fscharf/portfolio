@@ -17,7 +17,7 @@ const Styled = {
           opacity: 1;
           background: ${(p) => lighten(0.3, p.variant && p.variant)};
           &-active {
-            background: ${(p) => p.variant ? p.variant : `none`};
+            background: ${(p) => p.variant ? p.variant : `transparent`};
             padding: 8px;
           }
         }
@@ -29,7 +29,7 @@ const Styled = {
         background-image: none;
         &::after {
           font-size: 32px;
-          color: ${(p) => p.variant ? p.variant : `none`};
+          color: ${(p) => p.variant ? p.variant : `transparent`};
         }
       }
     }

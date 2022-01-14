@@ -41,7 +41,7 @@ const Styled = {
     color: ${darken(0.3, theme.colors.light)};
     font-size: 12px;
     svg {
-      color: ${(p) => p.variant};
+      color: ${(p) => p.variant ? p.variant : `transparent`};
     }
   `,
 
@@ -95,7 +95,7 @@ const Styled = {
 
   Link: styled.a`
     background: ${(p) => (p.outline ? `transparent` : p.variant)};
-    border: 2px solid ${(p) => p.variant};
+    border: 2px solid ${(p) => p.variant ? p.variant : `transparent`};
     color: ${(p) => (p.outline ? p.variant : theme.colors.light)};
     padding: 8px;
     display: flex;

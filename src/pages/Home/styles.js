@@ -84,7 +84,7 @@ const Styled = {
 
   Subtitle: styled.h4`
     font-size: 24px;
-    color: ${(p) => p.variant};
+    color: ${(p) => p.variant ? p.variant : `transparent`};
   `,
 
   Text: styled.p`
