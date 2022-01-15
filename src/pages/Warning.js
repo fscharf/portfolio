@@ -1,5 +1,6 @@
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
-import styled, { keyframes } from "styled-components";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import styled, { keyframes } from 'styled-components';
+import { GlobalStyles } from '../components';
 
 const rotate = keyframes`
     from {
@@ -58,6 +59,7 @@ const Icons = styled.div`
 export const Warning = () => {
   return (
     <Wrapper>
+      <GlobalStyles />
       <Icons>
         <HiOutlineChevronLeft />
         <span>fs</span>
