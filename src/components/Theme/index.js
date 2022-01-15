@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 
 const theme = {
   colors: {
-    primary: '#1847e2' || localStorage.getItem('primaryColor'),
+    primary: localStorage.getItem('primaryColor'),
     light: '#eeeeee',
     dark: '#0d0d0d',
   },
@@ -20,7 +20,7 @@ const theme = {
 
 const ThemeProvider = ({ children }) => {
   const [state, setState] = useState({
-    colorPrimary: '' || localStorage.getItem('primaryColor'),
+    colorPrimary: '#1847e2' || localStorage.getItem('primaryColor'),
   });
 
   useEffect(() => {
