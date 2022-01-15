@@ -5,7 +5,7 @@ import { Warning } from './pages/Warning';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Warning />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

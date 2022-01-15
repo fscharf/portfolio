@@ -11,7 +11,7 @@ const Styled = {
     gap: 8px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    background-color: ${(p) => darken(0.05, p.variant && p.variant)};
+    background-color: ${(p) => darken(0.05, p.variant)};
     font-size: 24px;
   `,
 
@@ -34,7 +34,7 @@ const Styled = {
     border-radius: 16px;
     width: 100%;
     color: ${theme.colors.light};
-    background-color: ${(p) => p.variant ? p.variant : `transparent`};
+    background-color: ${(p) => p.variant};
 
     ${(p) => p.customStyle && { ...p.customStyle }}
   `,
