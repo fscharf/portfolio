@@ -1,8 +1,6 @@
 import { lighten } from 'polished';
 import styled from 'styled-components';
 
-const getTheme = (obj) => obj;
-
 const Styled = {
   Swiper: styled.section`
     width: 100%;
@@ -17,7 +15,7 @@ const Styled = {
           height: 12px;
           font-size: 12px;
           opacity: 1;
-          background: ${(p) => lighten(0.3, getTheme(p.variant))};
+          background: ${(p) => lighten(0.3, !p.variant ? '#fff' : p.variant)};
           &-active {
             background: ${(p) => p.variant};
             padding: 8px;

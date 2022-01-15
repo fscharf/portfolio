@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 import { theme } from '..';
 
-const getTheme = (obj) => obj;
-
 const Styled = {
   Header: styled.section`
     display: flex;
@@ -13,7 +11,7 @@ const Styled = {
     gap: 8px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    background-color: ${(p) => darken(0.05, getTheme(p.variant))};
+    background-color: ${(p) => darken(0.05, !p.variant ? '#fff' : p.variant)};
     font-size: 24px;
   `,
 
