@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 
 const theme = {
   colors: {
-    primary: localStorage.getItem('primaryColor'),
+    primary: '#1847e2' || localStorage.getItem('primaryColor'),
     light: '#eeeeee',
     dark: '#0d0d0d',
   },
