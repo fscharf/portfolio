@@ -3,24 +3,26 @@ import ThemeSidebar from './components/ThemeSidebar';
 
 const ThemeContext = createContext();
 
+const primaryColor = localStorage.getItem('primaryColor');
+const setPrimaryColor = value => localStorage.setItem('primaryColor', value)
+
 const theme = {
   colors: {
-    primary: localStorage.getItem('primaryColor'),
+    primary: primaryColor,
     light: '#eeeeee',
     dark: '#0d0d0d',
   },
   updateColors: async (value) => {
     if (value) {
-      localStorage.setItem('primaryColor', value);
-    } else {
-      localStorage.setItem('primaryColor', '#1847e2');
-    }
+      return setPrimaryColor(value)
+    } 
+    setPrimaryColor('#1847e2');
   },
 };
 
 const ThemeProvider = ({ children }) => {
   const [state, setState] = useState({
-    colorPrimary: '#1847e2' || localStorage.getItem('primaryColor'),
+    colorPrimary: primaryColor ? primaryColor : '#1847e2',
   });
 
   useEffect(() => {

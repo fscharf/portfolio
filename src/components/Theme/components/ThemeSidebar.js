@@ -4,7 +4,7 @@ import Styled from './ThemeSidebar.styles';
 
 const ThemeSidebar = () => {
   const colors = [
-    '#1847E2',
+    '#1847e2',
     '#f20727',
     '#970ce8',
     '#1fcf3c',
