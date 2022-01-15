@@ -5,9 +5,9 @@ const ThemeContext = createContext();
 
 const theme = {
   colors: {
-    primary: String(localStorage.getItem('primaryColor')),
-    light: String('#eeeeee'),
-    dark: String('#0d0d0d'),
+    primary: localStorage.getItem('primaryColor'),
+    light: '#eeeeee',
+    dark: '#0d0d0d',
   },
   updateColors: async (value) => {
     if (value) {
@@ -24,7 +24,7 @@ const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    theme.updateColors(String(state.colorPrimary));
+    theme.updateColors(state.colorPrimary);
   }, [state.colorPrimary]);
 
   return (

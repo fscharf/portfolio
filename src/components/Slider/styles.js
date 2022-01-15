@@ -15,7 +15,7 @@ const Styled = {
           height: 12px;
           font-size: 12px;
           opacity: 1;
-          background: ${(p) => lighten(0.3, p.variant)};
+          background: ${(p) => lighten(0.3, String(p.variant))};
           &-active {
             background: ${(p) => p.variant};
             padding: 8px;
