@@ -3,7 +3,7 @@ const useProjects = () => {
     {
       title: 'agendai',
       siteUrl: '',
-      repoUrl: 'https://github.com/fscharf/events',
+      repoUrl: 'https://github.com/fscharf/barber-shop',
       finished: false,
       description:
         'agendai was raised to schedule barber attendances, contains many resources as authenticated login, reset password, e-mail confirmation and schedule panel. it depends on an api (node) which is deployed at heroku.',
