@@ -85,6 +85,10 @@ const Styled = {
     margin: 8px 0 24px;
     min-height: 100px;
     overflow-y: auto;
+
+    @media (max-width: 768px) {
+      min-height: 150px;
+    }
   `,
 
   Strip: styled.hr`

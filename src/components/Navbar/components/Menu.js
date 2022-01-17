@@ -15,6 +15,7 @@ const Menu = ({ links }) => {
           {link.text}
         </Styled.NavLink>
       ))}
+      <hr />
       {links.socials.map((link, index) => (
         <Styled.NavLink
           key={index}

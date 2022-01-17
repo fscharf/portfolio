@@ -6,12 +6,12 @@ import { ThemeContext } from '../../components';
 
 const Home = () => {
   const { state } = useContext(ThemeContext);
-  const icons = [
-    <Fa.FaJs />,
-    <Fa.FaReact />,
-    <Fa.FaSass />,
-    <Fa.FaNodeJs />,
-    <Fa.FaGithub />,
+  const tools = [
+    { title: 'JavaScript', icon: <Fa.FaJs /> },
+    { title: 'React', icon: <Fa.FaReact /> },
+    { title: 'SASS', icon: <Fa.FaSass /> },
+    { title: 'Node', icon: <Fa.FaNodeJs /> },
+    { title: 'GitHub', icon: <Fa.FaGithub /> },
   ];
 
   return (
@@ -28,13 +28,15 @@ const Home = () => {
           front-end developer
         </Styled.Subtitle>
         <Styled.Text data-aos={`fade-up`}>
-          i'm used to develop high/standard level e-commerce interfaces using
-          react and vtex io, besides i also work in personal projects in my free
-          time to practice.
+          tech enthusiast and coffee lover, nowadays i develop high level
+          interfaces using react and vtex io for e-commerce, besides
+          i also work in personal projects in my free time to practice.
         </Styled.Text>
         <Styled.IconsWrapper>
-          {icons.map((icon, index) => (
-            <Styled.Icon key={index}>{icon}</Styled.Icon>
+          {tools.map((tool, index) => (
+            <Styled.Icon key={index} title={tool.title}>
+              {tool.icon}
+            </Styled.Icon>
           ))}
         </Styled.IconsWrapper>
       </Styled.Column>

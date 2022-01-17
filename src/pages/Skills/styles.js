@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../components';
 
 const Styled = {
-  Section: styled.div`
+  Section: styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;

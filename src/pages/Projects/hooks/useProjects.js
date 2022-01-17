@@ -6,7 +6,7 @@ const useProjects = () => {
       repoUrl: 'https://github.com/fscharf/events',
       finished: false,
       description:
-        'agendai was raised to schedule barber attendances, contains many resources as authenticated login, reset password, e-mail confirmation and schedule panel. it depends on an node api which is deployed at heroku.',
+        'agendai was raised to schedule barber attendances, contains many resources as authenticated login, reset password, e-mail confirmation and schedule panel. it depends on an api (node) which is deployed at heroku.',
       tools: ['React', 'Node', 'SCSS', 'PostgreSQL'],
       images: [
         'https://i.imgur.com/CLMlHYV.png',
@@ -21,7 +21,7 @@ const useProjects = () => {
       repoUrl: 'https://github.com/fscharf/events',
       finished: true,
       description:
-        'final paper project made with asp.net, contains several resources like event subscription, online certification, validation for subscriptions, admin panel, user panel, crud operations, qrcode generator and much more.',
+        'final paper project made with asp.net, contains several resources like event subscription, online certification, validation for subscriptions, admin panel, user panel, crud operations, qrcode generator, etc.',
       tools: ['Asp.NET', 'C#', 'SCSS', 'SQL'],
       images: [
         'https://i.imgur.com/tcauPVw.png',
@@ -39,7 +39,7 @@ const useProjects = () => {
       repoUrl: 'https://github.com/fscharf/frontend-challenge',
       finished: true,
       description:
-        'front-end challenge offered by corebiz. contains rest requests, responsive layout, react components, add to cart, etc.',
+        'front-end challenge offered by corebiz. contains rest requests, responsive layout, custom components, add to cart, etc.',
       tools: ['React', 'SCSS'],
       images: [
         'https://i.imgur.com/og8Ws6q.png',
@@ -53,7 +53,7 @@ const useProjects = () => {
       repoUrl: 'https://github.com/fscharf/photographer-gallery-react',
       finished: true,
       description:
-        'initially this project was made like a template to photographers, later has been successfully deployed in heroku with own domain. contains gallery, contact and some information.',
+        'initially this project was made like a template to photographers, later has been deployed at heroku with own domain. contains gallery, contact and some information.',
       tools: ['React', 'SCSS', 'Heroku'],
       images: [
         'https://i.imgur.com/spvXww7.png',
@@ -67,7 +67,7 @@ const useProjects = () => {
       repoUrl: 'https://github.com/fscharf/petshop',
       finished: false,
       description:
-        'small template for petshop e-commerce purposes. made only to practice react.',
+        'template for petshop e-commerce purposes. made only to practice react.',
       tools: ['React', 'SCSS'],
       images: [
         'https://i.imgur.com/K2dYuA9.png',

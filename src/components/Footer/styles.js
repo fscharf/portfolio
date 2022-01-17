@@ -15,7 +15,7 @@ const Styled = {
     }
   `,
 
-  Wrapper: styled.div`
+  Wrapper: styled.section`
     display: flex;
     align-items: center;
     gap: 8px;
