@@ -13,7 +13,7 @@ const ThemeSidebar = () => {
     '#cc29b3',
     '#d65504',
   ];
-  const { state, setState } = useContext(ThemeContext);
+  const { state: globalState, setState: setGlobalState } = useContext(ThemeContext);
 
   return (
     <Sidebar title={`choose your theme`} id={`colorSidebar`}>
@@ -24,10 +24,10 @@ const ThemeSidebar = () => {
             name={`colors`}
             value={color}
             bgColor={color}
-            checked={state.colorPrimary === color && true}
+            checked={globalState.colorPrimary === color && true}
             key={index}
             onChange={() => {
-              setState({ colorPrimary: color });
+              setGlobalState({ colorPrimary: color });
               window.innerWidth < 768 && toggleSidebar('colorSidebar')
             }}
           />

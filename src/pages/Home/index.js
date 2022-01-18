@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../components';
 
 const Home = () => {
-  const { state } = useContext(ThemeContext);
+  const { state: globalState } = useContext(ThemeContext);
   const tools = [
     { title: 'JavaScript', icon: <Fa.FaJs /> },
     { title: 'React', icon: <Fa.FaReact /> },
@@ -19,12 +19,12 @@ const Home = () => {
       <Styled.Column data-aos={`fade-down`}>
         <Styled.ImgWrapper>
           <Styled.Img src={Personal} alt={`Personal Image`} />
-          <Styled.BgBlob variant={state.colorPrimary} />
+          <Styled.BgBlob variant={globalState.colorPrimary} />
         </Styled.ImgWrapper>
       </Styled.Column>
       <Styled.Column isContent data-aos={`fade-up`}>
         <Styled.Title>hi, i'm felipe</Styled.Title>
-        <Styled.Subtitle variant={state.colorPrimary}>
+        <Styled.Subtitle variant={globalState.colorPrimary}>
           front-end developer
         </Styled.Subtitle>
         <Styled.Text data-aos={`fade-up`}>
