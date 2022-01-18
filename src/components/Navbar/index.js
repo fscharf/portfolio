@@ -6,13 +6,16 @@ import { FiGithub } from 'react-icons/fi';
 import Styled from './styles';
 import Menu from './components/Menu';
 import Socials from './components/Socials';
+import ScrollButton from './components/ScrollButton';
+import { utils } from './utils';
 
 const Navbar = () => {
   const { state: globalState } = useContext(ThemeContext);
 
   window.onscroll = () => {
-    fixNavbar();
-    changeLinkState();
+    utils.fixNavbar();
+    utils.changeLinkState();
+    utils.toggleScrollBtn();
   };
 
   return (
@@ -46,7 +49,7 @@ const Navbar = () => {
               </Styled.NavLink>
             )}
             <Styled.NavLink
-              className={`configBtn`}
+              className={`highlight`}
               variant={globalState.colorPrimary}
               onClick={() => toggleSidebar('colorSidebar')}
             >
@@ -57,6 +60,7 @@ const Navbar = () => {
       </Styled.Nav>
       <Menu links={links} />
       <Socials links={links} variant={globalState.colorPrimary} />
+      <ScrollButton variant={globalState.colorPrimary} />
     </>
   );
 };
@@ -79,25 +83,6 @@ export const links = {
       icon: <FiGithub size={28} />,
     },
   ],
-};
-
-const fixNavbar = () => {
-  const navbar = document.getElementById('navbar');
-
-  if (window.scrollY > 100) navbar.classList.add('fixed');
-  else navbar.classList.remove('fixed');
-};
-
-const changeLinkState = () => {
-  const links = document.querySelectorAll('.nav-link'),
-    sections = document.querySelectorAll(['#home', '#skills', '#projects']);
-
-  let index = sections.length;
-
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-  links.forEach((link) => link.classList.remove('active'));
-  links[index].classList.add('active');
 };
 
 export default Navbar;

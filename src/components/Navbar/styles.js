@@ -58,14 +58,25 @@ const Styled = {
 
     &:hover,
     &.active,
-    &.configBtn {
+    &.highlight {
       color: ${theme.colors.light};
     }
 
-    &.configBtn {
+    &.highlight {
       border-radius: 50%;
       background: ${(p) => p.variant};
       padding: 8px;
+    }
+
+    &#scrollTopButton {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+
+      &.d-none {
+        display: none;
+      }
     }
   `,
 
