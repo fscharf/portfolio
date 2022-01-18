@@ -11,10 +11,10 @@ import { useContext } from 'react';
 
 const Skills = () => {
   const skills = useSkills();
-  const { state } = useContext(ThemeContext);
+  const { state: globalState } = useContext(ThemeContext);
 
   return (
-    <Styled.Section id="skills" variant={state.colorPrimary}>
+    <Styled.Section id="skills" variant={globalState.colorPrimary}>
       <Styled.Title>skills</Styled.Title>
       <Slider
         spaceBetween={16}
@@ -27,8 +27,8 @@ const Skills = () => {
         className={`swiperSlider`}
       >
         {skills.map((skill, index) => (
-          <Card key={index} customStyle={{ 'min-height': '320px' }} variant={state.colorPrimary}>
-            <Card.Header variant={state.colorPrimary}>
+          <Card key={index} customStyle={{ 'min-height': '320px' }} variant={globalState.colorPrimary}>
+            <Card.Header variant={globalState.colorPrimary}>
               {skill.icon}
               <Card.Text>{skill.title}</Card.Text>
             </Card.Header>
