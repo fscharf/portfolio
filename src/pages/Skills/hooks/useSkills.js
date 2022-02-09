@@ -7,10 +7,11 @@ const useSkills = () => {
       title: 'Front-end',
       specs: [
         { name: 'React', level: 2 },
-        { name: 'JavaScript ES6+', level: 2 },
-        { name: 'HTML5 + CSS3', level: 3 },
-        { name: 'SASS + SCSS', level: 2 },
-        { name: 'styled-components', level: 2 },
+        { name: 'JavaScript', level: 2 },
+        { name: 'TypeScript', level: 1 },
+        { name: 'HTML | CSS', level: 3 },
+        { name: 'SASS', level: 2 },
+        { name: 'CSS-in-JS', level: 2 },
       ],
     },
     {
@@ -18,10 +19,9 @@ const useSkills = () => {
       title: 'Back-end',
       specs: [
         { name: 'Node', level: 2 },
-        { name: 'Asp.NET', level: 1 },
         { name: 'C#', level: 1 },
         { name: 'API REST', level: 2 },
-        { name: 'JSON', level: 2 },
+        { name: 'JSON | XML', level: 2 },
         { name: 'SQL', level: 2 },
       ],
     },
@@ -29,11 +29,11 @@ const useSkills = () => {
       icon: <Hi.HiOutlineCog />,
       title: 'Tools',
       specs: [
-        { name: 'VTEX Legacy', level: 2 },
-        { name: 'VTEX IO', level: 1 },
+        { name: 'VTEX | VTEX IO', level: 2 },
         { name: 'Heroku', level: 2 },
         { name: 'GitHub', level: 2 },
         { name: 'Figma', level: 2 },
+        { name: 'AdobeXD', level: 1 },
       ],
     },
     {
