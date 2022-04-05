@@ -1,10 +1,10 @@
-import { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState, useContext } from 'react';
 import ThemeSidebar from './components/ThemeSidebar';
 
 const ThemeContext = createContext();
 
 const primaryColor = localStorage.getItem('primaryColor');
-const setPrimaryColor = value => localStorage.setItem('primaryColor', value)
+const setPrimaryColor = (value) => localStorage.setItem('primaryColor', value);
 
 const theme = {
   colors: {
@@ -14,8 +14,8 @@ const theme = {
   },
   updateColors: async (value) => {
     if (value) {
-      return setPrimaryColor(value)
-    } 
+      return setPrimaryColor(value);
+    }
     setPrimaryColor('#1847e2');
   },
 };
@@ -36,4 +36,6 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export { ThemeProvider, ThemeContext, theme, ThemeSidebar };
+const useTheme = () => useContext(ThemeContext);
+
+export { ThemeProvider, useTheme, theme, ThemeSidebar };

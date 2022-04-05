@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import * as Hi from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { ThemeContext, toggleSidebar } from '..';
+import { toggleSidebar, useTheme } from '..';
 import { FiGithub } from 'react-icons/fi';
 import Styled from './styles';
 import Menu from './components/Menu';
@@ -10,7 +10,8 @@ import ScrollButton from './components/ScrollButton';
 import { utils } from './utils';
 
 const Navbar = () => {
-  const { state: globalState } = useContext(ThemeContext);
+  const { state } = useTheme();
+  const { colorPrimary } = state;
 
   window.onscroll = () => {
     utils.fixNavbar();
@@ -22,7 +23,7 @@ const Navbar = () => {
     <>
       <Styled.Nav id="navbar">
         <Styled.Wrapper>
-          <Styled.Brand href="#" variant={globalState.colorPrimary}>
+          <Styled.Brand href="#" variant={colorPrimary}>
             <Hi.HiChevronLeft />
             <Styled.Span>
               {window.innerWidth > 768 ? `felipescharf` : `fs`}
@@ -50,17 +51,17 @@ const Navbar = () => {
             )}
             <Styled.NavLink
               className={`highlight`}
-              variant={globalState.colorPrimary}
+              variant={colorPrimary}
               onClick={() => toggleSidebar('colorSidebar')}
             >
-              <Hi.HiOutlineCog size={24} />
+              <Hi.HiOutlineColorSwatch size={24} />
             </Styled.NavLink>
           </Styled.Column>
         </Styled.Wrapper>
       </Styled.Nav>
       <Menu links={links} />
-      <Socials links={links} variant={globalState.colorPrimary} />
-      <ScrollButton variant={globalState.colorPrimary} />
+      <Socials links={links} variant={colorPrimary} />
+      <ScrollButton variant={colorPrimary} />
     </>
   );
 };

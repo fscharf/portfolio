@@ -3,18 +3,26 @@ import {
   ListGroup,
   Rating,
   Slider,
-  ThemeContext,
+  Tooltip,
+  useTheme,
 } from '../../components';
 import Styled from './styles';
 import useSkills from './hooks/useSkills';
-import { useContext } from 'react';
 
 const Skills = () => {
   const skills = useSkills();
-  const { state: globalState } = useContext(ThemeContext);
+  const { state } = useTheme();
+  const { colorPrimary } = state;
+
+  const dynamicTitle = (value) =>
+    value <= 1
+      ? 'Básico'
+      : value === 2
+      ? 'Intermediário'
+      : value >= 3 && 'Avançado';
 
   return (
-    <Styled.Section id="skills" variant={globalState.colorPrimary}>
+    <Styled.Section id="skills" variant={colorPrimary}>
       <Styled.Title>skills</Styled.Title>
       <Slider
         spaceBetween={16}
@@ -27,8 +35,12 @@ const Skills = () => {
         className={`swiperSlider`}
       >
         {skills.map((skill, index) => (
-          <Card key={index} customStyle={{ 'min-height': '320px' }} variant={globalState.colorPrimary}>
-            <Card.Header variant={globalState.colorPrimary}>
+          <Card
+            key={index}
+            customStyle={{ 'min-height': '320px' }}
+            variant={colorPrimary}
+          >
+            <Card.Header variant={colorPrimary}>
               {skill.icon}
               <Card.Text>{skill.title}</Card.Text>
             </Card.Header>
@@ -38,7 +50,9 @@ const Skills = () => {
                 {skill.specs.map((spec, index) => (
                   <ListGroup.Item key={index}>
                     <ListGroup.Text>{spec.name}</ListGroup.Text>
-                    <Rating level={spec.level} />
+                    <Tooltip top text={dynamicTitle(spec.level)}>
+                      <Rating level={spec.level} />
+                    </Tooltip>
                   </ListGroup.Item>
                 ))}
               </ListGroup>

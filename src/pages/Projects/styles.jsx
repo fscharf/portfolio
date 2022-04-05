@@ -28,20 +28,26 @@ const Styled = {
     gap: 8px;
     align-items: center;
 
+    background-color: ${(p) => p.variant};
+
     @media (max-width: 768px) {
       justify-content: center;
     }
   `,
 
-  Span: styled.span`
+  Tool: styled.span`
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     text-transform: lowercase;
-    color: ${darken(0.3, theme.colors.light)};
+    background-color: ${(p) => p.variant};
+    color: #fff;
+    padding: 4px;
+    border-radius: 8px;
     font-size: 12px;
+
     svg {
-      color: ${(p) => p.variant};
+      color: ${(p) => darken(0.2, p.variant)};
     }
   `,
 
@@ -98,15 +104,21 @@ const Styled = {
   `,
 
   Link: styled.a`
-    background: ${(p) => (p.outline ? `transparent` : p.variant)};
-    border: 2px solid ${(p) => p.variant};
-    color: ${(p) => (p.outline ? p.variant : theme.colors.light)};
+    background: transparent;
+    border: 2px solid ${darken(0.2, '#eee')};
+    color: ${(p) => p.variant};
     padding: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
     border-radius: 8px;
     transition: 0.2s ease;
+    font-size: 18px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
 
     @media (max-width: 300px) {
       font-size: 12px;

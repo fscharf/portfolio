@@ -29,7 +29,7 @@ const Styled = {
         background-image: none;
         &::after {
           font-size: 32px;
-          color: ${(p) => (p.variant)};
+          color: ${(p) => p.variant};
         }
       }
     }
