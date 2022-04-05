@@ -2,11 +2,12 @@ const useProjects = () => {
   return [
     {
       title: 'agendai',
+      apiUrl: 'https://github.com/fscharf/barber-shop-api',
       siteUrl: '',
       repoUrl: 'https://github.com/fscharf/barber-shop',
       finished: false,
       description:
-        'agendai was raised to schedule barber attendances, contains many resources as authenticated login, reset password, e-mail confirmation and schedule panel. it depends on an api (node) which is deployed at heroku.',
+        'agendai is a schedule web app. features: authentication, my account, e-mail confirmation, dashboard, etc. there is also a web api built with node.',
       tools: ['React', 'Node', 'SCSS', 'PostgreSQL'],
       images: [
         'https://i.imgur.com/CLMlHYV.png',
@@ -17,11 +18,12 @@ const useProjects = () => {
     },
     {
       title: 'events',
+      apiUrl: '',
       siteUrl: '',
       repoUrl: 'https://github.com/fscharf/events',
       finished: true,
       description:
-        'final paper project made with asp.net, contains several resources like event subscription, online certification, validation for subscriptions, admin panel, user panel, crud operations, qrcode generator, etc.',
+        'final paper project made with asp.net. features: event subscription, online certification, subscription validation, admin/user dashboard, crud, web api, qrcode generator, etc.',
       tools: ['Asp.NET', 'C#', 'SCSS', 'SQL'],
       images: [
         'https://i.imgur.com/tcauPVw.png',
@@ -35,11 +37,12 @@ const useProjects = () => {
     },
     {
       title: 'front-end challenge',
+      apiUrl: '',
       siteUrl: '',
       repoUrl: 'https://github.com/fscharf/frontend-challenge',
       finished: true,
       description:
-        'front-end challenge offered by corebiz. contains rest requests, responsive layout, custom components, add to cart, etc.',
+        'front-end challenge by corebiz. features: rest requests, responsive layout, custom components, add to cart, etc.',
       tools: ['React', 'SCSS'],
       images: [
         'https://i.imgur.com/og8Ws6q.png',
@@ -48,44 +51,29 @@ const useProjects = () => {
       ],
     },
     {
-      title: 'iuri rulian fotografia',
-      siteUrl: 'http://iurirulian.com.br',
-      repoUrl: 'https://github.com/fscharf/photographer-gallery-react',
+      title: 'minicart challenge',
+      apiUrl: '',
+      siteUrl: 'http://minicart-react.vercel.app/',
+      repoUrl: 'https://github.com/fscharf/minicart-react',
       finished: true,
-      description:
-        'initially this project was made like a template to photographers, later has been deployed at heroku with own domain. contains gallery, contact and some information.',
-      tools: ['React', 'SCSS', 'Heroku'],
+      description: 'simple minicart simulator.',
+      tools: ['React', 'Styled-Components'],
       images: [
-        'https://i.imgur.com/spvXww7.png',
-        'https://i.imgur.com/vVbfuG3.png',
-        'https://i.imgur.com/MXp6FZt.png',
+        'https://i.imgur.com/1yEFtEM.png',
+        'https://i.imgur.com/BEHFo1U.png',
       ],
     },
     {
-      title: 'petshop',
-      siteUrl: '',
-      repoUrl: 'https://github.com/fscharf/petshop',
-      finished: false,
-      description:
-        'template for petshop e-commerce purposes. made only to practice react.',
-      tools: ['React', 'SCSS'],
-      images: [
-        'https://i.imgur.com/K2dYuA9.png',
-        'https://i.imgur.com/KKnJGic.png',
-        'https://i.imgur.com/Tn0Hk3x.png',
-      ],
-    },
-    {
-      title: 'intranet',
-      siteUrl: '',
-      repoUrl: 'https://github.com/fscharf/intranet-tng',
+      title: 'form challenge',
+      apiUrl: '',
+      siteUrl: 'https://form-challenge-v2.vercel.app/',
+      repoUrl: 'https://github.com/fscharf/form-challenge',
       finished: true,
-      description:
-        'template for internal enterprise purposes. made only to practice node and database integration.',
-      tools: ['Handlebars', 'Node', 'SQL'],
+      description: 'simple form simulator.',
+      tools: ['React', 'Styled-Components'],
       images: [
-        'https://i.imgur.com/gkDSGuI.png',
-        'https://i.imgur.com/gkDSGuI.png',
+        'https://i.imgur.com/PMCrue3.png',
+        'https://i.imgur.com/Mqiagxa.png',
       ],
     },
   ];

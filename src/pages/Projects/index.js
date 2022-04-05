@@ -1,8 +1,12 @@
-import { HiBadgeCheck, HiOutlineGlobeAlt, HiOutlineTag } from 'react-icons/hi';
-import { Slider, ThemeContext } from '../../components';
+import {
+  HiBadgeCheck,
+  HiOutlineCloudUpload,
+  HiOutlineEye,
+  HiTag
+} from 'react-icons/hi';
+import { Slider, useTheme } from '../../components';
 import useProjects from './hooks/useProjects';
 import Styled from './styles';
-import { useContext } from 'react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
@@ -13,7 +17,8 @@ const Projects = () => {
       return `<span key="${index}" class="${className}"></span>`;
     },
   };
-  const { state: globalState } = useContext(ThemeContext);
+  const { state } = useTheme();
+  const { colorPrimary } = state;
 
   return (
     <Styled.Section id="projects" fullHeight>
@@ -33,7 +38,7 @@ const Projects = () => {
               </Slider>
             </Styled.ImgWrapper>
             <Styled.Wrapper>
-              <Styled.Title variant={globalState.colorPrimary}>
+              <Styled.Title variant={colorPrimary}>
                 {project.title}{' '}
                 {project.finished && (
                   <HiBadgeCheck title={`done`} color={`#02db38`} />
@@ -46,28 +51,38 @@ const Projects = () => {
                     href={project.siteUrl}
                     target={`_blank`}
                     primary
-                    variant={globalState.colorPrimary}
+                    variant={colorPrimary}
                   >
-                    <HiOutlineGlobeAlt /> view website{' '}
+                    <HiOutlineEye /> preview
+                  </Styled.Link>
+                )}
+                {project.apiUrl && (
+                  <Styled.Link
+                    href={project.apiUrl}
+                    target={`_blank`}
+                    primary
+                    variant={colorPrimary}
+                  >
+                    <HiOutlineCloudUpload /> api source
                   </Styled.Link>
                 )}
                 <Styled.Link
                   href={project.repoUrl}
                   target={`_blank`}
                   outline
-                  variant={globalState.colorPrimary}
+                  variant={colorPrimary}
                 >
-                  <FaGithub /> repository
+                  <FaGithub /> source
                 </Styled.Link>
               </Styled.LinkWrapper>
               <Styled.Strip />
 
               <Styled.Tools>
                 {project.tools.map((tool, index) => (
-                  <Styled.Span key={index} variant={globalState.colorPrimary}>
+                  <Styled.Tool key={index} variant={colorPrimary}>
                     {' '}
-                    <HiOutlineTag /> {tool}
-                  </Styled.Span>
+                    <HiTag /> {tool}
+                  </Styled.Tool>
                 ))}
               </Styled.Tools>
             </Styled.Wrapper>
