@@ -8,7 +8,7 @@ const useSkills = () => {
       specs: [
         { name: 'React', level: 2 },
         { name: 'JavaScript', level: 2 },
-        { name: 'TypeScript', level: 1 },
+        { name: 'TypeScript', level: 2 },
         { name: 'HTML | CSS', level: 3 },
         { name: 'SASS', level: 2 },
         { name: 'CSS-in-JS', level: 2 },
@@ -20,7 +20,7 @@ const useSkills = () => {
       specs: [
         { name: 'Node', level: 2 },
         { name: 'C#', level: 1 },
-        { name: 'API REST', level: 2 },
+        { name: 'APIs REST', level: 2 },
         { name: 'JSON | XML', level: 2 },
         { name: 'SQL', level: 2 },
       ],
@@ -44,6 +44,7 @@ const useSkills = () => {
         { name: 'Clean Code', level: 2 },
         { name: 'Design Patterns', level: 1 },
         { name: 'UI/UX', level: 1 },
+        { name: 'SEO', level: 1 },
       ],
     },
   ];

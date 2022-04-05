@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { ThemeContext, Sidebar, toggleSidebar } from '../..';
+import { Sidebar, toggleSidebar, useTheme } from '../..';
 import Styled from './ThemeSidebar.styles';
 
 const ThemeSidebar = () => {
@@ -13,7 +12,8 @@ const ThemeSidebar = () => {
     '#cc29b3',
     '#d65504',
   ];
-  const { state: globalState, setState: setGlobalState } = useContext(ThemeContext);
+  const { state, setState } = useTheme();
+  const { colorPrimary } = state;
 
   return (
     <Sidebar title={`choose your theme`} id={`colorSidebar`}>
@@ -24,11 +24,11 @@ const ThemeSidebar = () => {
             name={`colors`}
             value={color}
             bgColor={color}
-            checked={globalState.colorPrimary === color && true}
+            checked={colorPrimary === color && true}
             key={index}
             onChange={() => {
-              setGlobalState({ colorPrimary: color });
-              window.innerWidth < 768 && toggleSidebar('colorSidebar')
+              setState({ colorPrimary: color });
+              window.innerWidth < 768 && toggleSidebar('colorSidebar');
             }}
           />
         ))}

@@ -1,11 +1,11 @@
 import Personal from '../../assets/images/personal.png';
 import * as Fa from 'react-icons/fa';
 import Styled from './styles';
-import { useContext } from 'react';
-import { ThemeContext } from '../../components';
+import { Tooltip, useTheme } from '../../components';
 
 const Home = () => {
-  const { state: globalState } = useContext(ThemeContext);
+  const { state } = useTheme();
+  const { colorPrimary } = state;
   const tools = [
     { title: 'JavaScript', icon: <Fa.FaJs /> },
     { title: 'React', icon: <Fa.FaReact /> },
@@ -19,24 +19,24 @@ const Home = () => {
       <Styled.Column data-aos={`fade-down`}>
         <Styled.ImgWrapper>
           <Styled.Img src={Personal} alt={`Personal Image`} />
-          <Styled.BgBlob variant={globalState.colorPrimary} />
+          <Styled.BgBlob variant={colorPrimary} />
         </Styled.ImgWrapper>
       </Styled.Column>
       <Styled.Column isContent data-aos={`fade-up`}>
         <Styled.Title>hi, i'm felipe</Styled.Title>
-        <Styled.Subtitle variant={globalState.colorPrimary}>
+        <Styled.Subtitle variant={colorPrimary}>
           front-end developer
         </Styled.Subtitle>
         <Styled.Text data-aos={`fade-up`}>
           tech enthusiast and coffee lover, nowadays i develop high level
-          interfaces using react and vtex io for e-commerce, besides
-          i also work in personal projects in my free time to practice.
+          interfaces using react and vtex io for e-commerce, besides i also work
+          in personal projects in my free time to practice.
         </Styled.Text>
         <Styled.IconsWrapper>
           {tools.map((tool, index) => (
-            <Styled.Icon key={index} title={tool.title}>
-              {tool.icon}
-            </Styled.Icon>
+            <Tooltip key={index} text={tool.title}>
+              <Styled.Icon>{tool.icon}</Styled.Icon>
+            </Tooltip>
           ))}
         </Styled.IconsWrapper>
       </Styled.Column>
