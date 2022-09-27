@@ -1,14 +1,13 @@
-import Profile from '../../assets/images/personal-icon.png';
+import { HiOutlineHeart } from 'react-icons/hi';
 import { links } from '..';
 import Styled from './styles';
 
 const Footer = () => {
   return (
     <Styled.Footer>
-      <Styled.Wrapper>
-        <Styled.Img src={Profile} alt={`Personal Icon`} />{' '}
-        <Styled.Text light>made with 🖤 by</Styled.Text>
-        <Styled.Text bold>felipescharf</Styled.Text>
+      <Styled.Wrapper style={{ display: 'flex', alignItems: 'center' }}>
+        <Styled.Text light>made with</Styled.Text>
+        <HiOutlineHeart />
       </Styled.Wrapper>
 
       <Styled.Socials>

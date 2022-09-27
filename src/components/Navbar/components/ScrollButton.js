@@ -1,13 +1,13 @@
 import { HiOutlineChevronUp } from 'react-icons/hi';
 import Styled from '../styles';
-import { utils } from '../utils';
+import { scrollTop } from '../utils';
 
 const ScrollButton = ({ variant }) => {
   return (
     <Styled.NavLink
       id={`scrollTopButton`}
       className={`highlight d-none`}
-      onClick={() => utils.scrollTop()}
+      onClick={() => scrollTop()}
       variant={variant}
       title={`scroll to top`}
     >

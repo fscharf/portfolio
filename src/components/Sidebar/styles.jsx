@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '..';
+import { theme } from '../../theme';
 
 const Styled = {
   Aside: styled.aside`
@@ -40,12 +40,12 @@ const Styled = {
   Title: styled.h2`
     color: ${theme.colors.light};
   `,
-  
+
   CloseButton: styled.a`
     cursor: pointer;
     display: flex;
     align-items: center;
-  `
+  `,
 };
 
 export default Styled;

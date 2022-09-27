@@ -1,6 +1,6 @@
 import { lighten } from 'polished';
 import styled, { keyframes } from 'styled-components';
-import { theme } from '../../components';
+import { theme } from '../../theme';
 
 const rotate = keyframes`
   from { transform: rotate(0deg) };
@@ -30,7 +30,7 @@ const Styled = {
   `,
 
   Img: styled.img`
-    max-width: 300px;
+    width: 280px;
 
     @media (max-width: 1024px) {
       max-width: 200px;
@@ -43,9 +43,9 @@ const Styled = {
 
     svg {
       position: absolute;
-      top: 0;
+      top: -20px;
       left: 0;
-      max-width: 300px;
+      width: 300px;
       height: auto;
       z-index: -1;
       animation: ${rotate} 8s linear infinite;

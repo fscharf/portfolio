@@ -1,29 +1,31 @@
-import React from 'react';
-import * as Hi from 'react-icons/hi';
+import React, { Fragment, useEffect } from 'react';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { toggleSidebar, useTheme } from '..';
 import { FiGithub } from 'react-icons/fi';
-import Styled from './styles';
+import * as Hi from 'react-icons/hi';
+import { toggleSidebar } from '..';
+import { useTheme } from '../../contexts/theme';
 import Menu from './components/Menu';
-import Socials from './components/Socials';
 import ScrollButton from './components/ScrollButton';
-import { utils } from './utils';
+import Socials from './components/Socials';
+import Styled from './styles';
+import { changeLinkState, fixNavbar, toggleScrollButton } from './utils';
 
 const Navbar = () => {
-  const { state } = useTheme();
-  const { colorPrimary } = state;
+  const { primaryColor } = useTheme();
 
-  window.onscroll = () => {
-    utils.fixNavbar();
-    utils.changeLinkState();
-    utils.toggleScrollBtn();
-  };
+  useEffect(() => {
+    window.onscroll = () => {
+      fixNavbar();
+      changeLinkState();
+      toggleScrollButton();
+    };
+  }, []);
 
   return (
-    <>
+    <Fragment>
       <Styled.Nav id="navbar">
         <Styled.Wrapper>
-          <Styled.Brand href="#" variant={colorPrimary}>
+          <Styled.Brand href="#" variant={primaryColor}>
             <Hi.HiChevronLeft />
             <Styled.Span>
               {window.innerWidth > 768 ? `felipescharf` : `fs`}
@@ -51,7 +53,7 @@ const Navbar = () => {
             )}
             <Styled.NavLink
               className={`highlight`}
-              variant={colorPrimary}
+              variant={primaryColor}
               onClick={() => toggleSidebar('colorSidebar')}
             >
               <Hi.HiOutlineColorSwatch size={24} />
@@ -60,9 +62,9 @@ const Navbar = () => {
         </Styled.Wrapper>
       </Styled.Nav>
       <Menu links={links} />
-      <Socials links={links} variant={colorPrimary} />
-      <ScrollButton variant={colorPrimary} />
-    </>
+      <Socials links={links} variant={primaryColor} />
+      <ScrollButton variant={primaryColor} />
+    </Fragment>
   );
 };
 

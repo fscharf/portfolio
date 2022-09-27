@@ -1,17 +1,26 @@
+import {
+  SiCss3,
+  SiGit,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiTypescript,
+} from 'react-icons/si';
 import Personal from '../../assets/images/personal.png';
-import * as Fa from 'react-icons/fa';
+import { Tooltip } from '../../components';
+import { useTheme } from '../../contexts/theme';
 import Styled from './styles';
-import { Tooltip, useTheme } from '../../components';
 
 const Home = () => {
-  const { state } = useTheme();
-  const { colorPrimary } = state;
+  const { primaryColor } = useTheme();
+
   const tools = [
-    { title: 'JavaScript', icon: <Fa.FaJs /> },
-    { title: 'React', icon: <Fa.FaReact /> },
-    { title: 'SASS', icon: <Fa.FaSass /> },
-    { title: 'Node', icon: <Fa.FaNodeJs /> },
-    { title: 'GitHub', icon: <Fa.FaGithub /> },
+    { title: 'Typescript', icon: <SiTypescript /> },
+    { title: 'React', icon: <SiReact /> },
+    { title: 'Next', icon: <SiNextdotjs /> },
+    { title: 'CSS3', icon: <SiCss3 /> },
+    { title: 'Node', icon: <SiNodedotjs /> },
+    { title: 'Git', icon: <SiGit /> },
   ];
 
   return (
@@ -19,18 +28,19 @@ const Home = () => {
       <Styled.Column data-aos={`fade-down`}>
         <Styled.ImgWrapper>
           <Styled.Img src={Personal} alt={`Personal Image`} />
-          <Styled.BgBlob variant={colorPrimary} />
+          <Styled.BgBlob variant={primaryColor} />
         </Styled.ImgWrapper>
       </Styled.Column>
       <Styled.Column isContent data-aos={`fade-up`}>
         <Styled.Title>hi, i'm felipe</Styled.Title>
-        <Styled.Subtitle variant={colorPrimary}>
+        <Styled.Subtitle variant={primaryColor}>
           front-end developer
         </Styled.Subtitle>
         <Styled.Text data-aos={`fade-up`}>
-          tech enthusiast and coffee lover, nowadays i develop high level
-          interfaces using react and vtex io for e-commerce, besides i also work
-          in personal projects in my free time to practice.
+          and a very curious guy.
+          <Styled.Text style={{ fontSize: '12px', color: '#aeaeae' }}>
+            updates soon 👀
+          </Styled.Text>
         </Styled.Text>
         <Styled.IconsWrapper>
           {tools.map((tool, index) => (

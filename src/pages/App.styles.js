@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../components';
+import { theme } from '../theme';
 
 const Styled = {
   Main: styled.main`
@@ -26,7 +26,7 @@ const Styled = {
     color: ${(p) => (p.dark ? theme.colors.dark : theme.colors.light)};
     line-height: 1.6;
   `,
-  
+
   Section: styled.section`
     height: ${(p) => (p.fullHeight ? `100vh` : `100%`)};
     ${(p) => p.customStyle && { ...p.customStyle }}
