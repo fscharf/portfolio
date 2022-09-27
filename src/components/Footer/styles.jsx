@@ -1,6 +1,6 @@
 import { darken } from 'polished';
 import styled from 'styled-components';
-import { theme } from '..';
+import { theme } from '../../theme';
 
 const Styled = {
   Footer: styled.footer`
@@ -19,11 +19,6 @@ const Styled = {
     display: flex;
     align-items: center;
     gap: 8px;
-  `,
-
-  Img: styled.img`
-    max-width: 32px;
-    border-radius: 50%;
   `,
 
   Text: styled.span`

@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme } from '..';
 import Background from '../../assets/images/background.svg';
+import { theme } from '../../theme';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     font-family: 'DM Sans', 'Segoe UI', sans-serif;
     box-sizing: border-box;
@@ -30,5 +30,3 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 `;
-
-export default GlobalStyles;

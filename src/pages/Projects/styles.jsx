@@ -1,6 +1,6 @@
 import { darken } from 'polished';
 import styled from 'styled-components';
-import { theme } from '../../components';
+import { theme } from '../../theme';
 
 const Styled = {
   Section: styled.section`

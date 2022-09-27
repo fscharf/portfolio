@@ -1,28 +1,13 @@
-import {
-  Card,
-  ListGroup,
-  Rating,
-  Slider,
-  Tooltip,
-  useTheme,
-} from '../../components';
+import { Card, ListGroup, Slider } from '../../components';
+import { useTheme } from '../../contexts/theme';
+import { skills } from '../../data';
 import Styled from './styles';
-import useSkills from './hooks/useSkills';
 
 const Skills = () => {
-  const skills = useSkills();
-  const { state } = useTheme();
-  const { colorPrimary } = state;
-
-  const dynamicTitle = (value) =>
-    value <= 1
-      ? 'Básico'
-      : value === 2
-      ? 'Intermediário'
-      : value >= 3 && 'Avançado';
+  const { primaryColor } = useTheme();
 
   return (
-    <Styled.Section id="skills" variant={colorPrimary}>
+    <Styled.Section id="skills" variant={primaryColor}>
       <Styled.Title>skills</Styled.Title>
       <Slider
         spaceBetween={16}
@@ -34,31 +19,32 @@ const Skills = () => {
         pagination={{ clickable: true }}
         className={`swiperSlider`}
       >
-        {skills.map((skill, index) => (
-          <Card
-            key={index}
-            customStyle={{ 'min-height': '320px' }}
-            variant={colorPrimary}
-          >
-            <Card.Header variant={colorPrimary}>
-              {skill.icon}
-              <Card.Text>{skill.title}</Card.Text>
-            </Card.Header>
+        {skills.map((skill, index) => {
+          const { specs } = skill;
 
-            <Card.Body>
-              <ListGroup>
-                {skill.specs.map((spec, index) => (
-                  <ListGroup.Item key={index}>
-                    <ListGroup.Text>{spec.name}</ListGroup.Text>
-                    <Tooltip top text={dynamicTitle(spec.level)}>
-                      <Rating level={spec.level} />
-                    </Tooltip>
-                  </ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Card.Body>
-          </Card>
-        ))}
+          return (
+            <Card
+              key={index}
+              customStyle={{ 'min-height': '320px' }}
+              variant={primaryColor}
+            >
+              <Card.Header variant={primaryColor}>
+                {skill.icon}
+                <Card.Text>{skill.title}</Card.Text>
+              </Card.Header>
+
+              <Card.Body>
+                <ListGroup>
+                  {specs.map((spec, index) => (
+                    <ListGroup.Item key={index}>
+                      <ListGroup.Text>{spec}</ListGroup.Text>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          );
+        })}
       </Slider>
     </Styled.Section>
   );
