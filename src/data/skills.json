@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Frontend",
+    "specs": [
+      "React",
+      "Next",
+      "TypeScript | JavaScript",
+      "HTML | CSS | SCSS",
+      "CSS-in-JS",
+      "styled-components",
+      "Stitches"
+    ]
+  },
+  {
+    "title": "Backend",
+    "specs": ["Node", "Rest API", "SQL"]
+  },
+  {
+    "title": "Tools",
+    "specs": [
+      "Jest",
+      "Cypress",
+      "VTEX",
+      "Vercel | Jenkins | GitHub Actions",
+      "GitHub | Bitbucket | Gitlab",
+      "Figma"
+    ]
+  },
+  {
+    "title": "Practices",
+    "specs": [
+      "Git",
+      "CI/CD",
+      "Clean Code | Clean Architecture",
+      "UI/UX",
+      "TDD",
+      "SOLID"
+    ]
+  }
+]

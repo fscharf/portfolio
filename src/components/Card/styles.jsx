@@ -1,6 +1,6 @@
-import { darken } from 'polished';
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import { darken } from 'polished'
+import styled from 'styled-components'
+import { theme } from '../../theme'
 
 const Styled = {
   Header: styled.section`
@@ -9,15 +9,16 @@ const Styled = {
     justify-content: center;
     padding: 8px;
     gap: 8px;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    background-color: ${(p) => darken(0.05, !p.variant ? '#fff' : p.variant)};
-    font-size: 24px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    background: ${p => darken(0.1, p.variant || '#fff')};
+    backdrop-filter: blur(12px);
+    font-size: 20px;
+    text-transform: uppercase;
   `,
 
   Span: styled.span`
-    text-transform: lowercase;
-    font-weight: bold;
+    font-weight: 800;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -28,16 +29,18 @@ const Styled = {
     flex-direction: column;
     gap: 8px;
     padding: 24px;
+    font-weight: 700;
   `,
 
   Container: styled.article`
-    border-radius: 16px;
+    border-radius: 32px;
     width: 100%;
     color: ${theme.colors.light};
-    background-color: ${(p) => p.variant};
+    background: ${p => p.variant};
+    backdrop-filter: blur(12px);
 
-    ${(p) => p.customStyle && { ...p.customStyle }}
-  `,
-};
+    ${p =>  ({ ...p.customStyle })}
+  `
+}
 
-export default Styled;
+export default Styled

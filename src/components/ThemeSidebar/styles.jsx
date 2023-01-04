@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Styled = {
   Wrapper: styled.div`
@@ -11,7 +11,7 @@ const Styled = {
   Input: styled.input`
     appearance: none;
     border-radius: 50%;
-    background-color: ${(p) => p.bgColor};
+    background-color: ${p => p.bgColor};
     width: 32px;
     height: 32px;
     border: none;
@@ -22,7 +22,7 @@ const Styled = {
     &:checked {
       border: 2px solid #fff;
     }
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

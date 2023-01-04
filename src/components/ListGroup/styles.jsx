@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Styled = {
   List: styled.ul`
@@ -16,7 +16,7 @@ const Styled = {
   Text: styled.span`
     width: 100%;
     white-space: nowrap;
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

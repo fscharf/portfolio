@@ -1,6 +1,6 @@
-import { HiOutlineChevronUp } from 'react-icons/hi';
-import Styled from '../styles';
-import { scrollTop } from '../utils';
+import { HiOutlineChevronUp } from 'react-icons/hi'
+import Styled from '../styles'
+import { scrollTop } from '../../../utils/navigation'
 
 const ScrollButton = ({ variant }) => {
   return (
@@ -13,7 +13,7 @@ const ScrollButton = ({ variant }) => {
     >
       <HiOutlineChevronUp size={28} />
     </Styled.NavLink>
-  );
-};
+  )
+}
 
-export default ScrollButton;
+export default ScrollButton

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { css } from 'styled-components';
+import styled from 'styled-components'
+import { css } from 'styled-components'
 
 const Styled = {
   Wrapper: styled.div`
@@ -26,7 +26,7 @@ const Styled = {
     transition: opacity 0.2s linear;
     z-index: 999;
 
-    ${(p) =>
+    ${p =>
       p.top
         ? css`
             left: 50%;
@@ -38,7 +38,7 @@ const Styled = {
             top: 50%;
             transform: translateY(-50%);
           `}
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

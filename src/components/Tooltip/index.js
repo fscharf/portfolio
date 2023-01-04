@@ -1,4 +1,4 @@
-import Styled from './styles';
+import Styled from './styles'
 
 const Tooltip = ({ children, text, top }) => {
   return (
@@ -8,7 +8,7 @@ const Tooltip = ({ children, text, top }) => {
         {text}
       </Styled.Text>
     </Styled.Wrapper>
-  );
-};
+  )
+}
 
-export default Tooltip;
+export default Tooltip

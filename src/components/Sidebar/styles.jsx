@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import styled from 'styled-components'
+import { theme } from '../../theme'
 
 const Styled = {
   Aside: styled.aside`
@@ -11,7 +11,8 @@ const Styled = {
     width: 350px;
     transform: translateX(350px);
     transition: transform 0.3s ease;
-    background: ${theme.colors.dark};
+    background: rgba(19, 19, 19, 0.8);
+    backdrop-filter: blur(24px);
     z-index: 999;
 
     &.open {
@@ -27,11 +28,11 @@ const Styled = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 32px;
+    padding: 48px;
   `,
 
   Wrapper: styled.section`
-    padding: 32px;
+    padding: 16px 48px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -45,7 +46,7 @@ const Styled = {
     cursor: pointer;
     display: flex;
     align-items: center;
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Styled = {
-  Header: styled.header``,
-};
+  Header: styled.header``
+}
 
-export default Styled;
+export default Styled

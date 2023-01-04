@@ -1,6 +1,6 @@
-import { HiOutlineExternalLink } from 'react-icons/hi';
-import { Sidebar, toggleSidebar } from '../..';
-import Styled from '../styles';
+import { HiOutlineExternalLink } from 'react-icons/hi'
+import { Sidebar, toggleSidebar } from '../..'
+import Styled from '../styles'
 
 const Menu = ({ links }) => {
   return (
@@ -27,7 +27,7 @@ const Menu = ({ links }) => {
         </Styled.NavLink>
       ))}
     </Sidebar>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

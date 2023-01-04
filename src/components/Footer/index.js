@@ -1,6 +1,6 @@
-import { HiOutlineHeart } from 'react-icons/hi';
-import { links } from '..';
-import Styled from './styles';
+import { HiOutlineHeart } from 'react-icons/hi'
+import { links } from '..'
+import Styled from './styles'
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
         ))}
       </Styled.Socials>
     </Styled.Footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

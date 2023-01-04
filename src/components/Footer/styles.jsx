@@ -1,6 +1,6 @@
-import { darken } from 'polished';
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import { darken } from 'polished'
+import styled from 'styled-components'
+import { theme } from '../../theme'
 
 const Styled = {
   Footer: styled.footer`
@@ -22,9 +22,9 @@ const Styled = {
   `,
 
   Text: styled.span`
-    color: ${(p) =>
+    color: ${p =>
       p.light ? darken(0.3, theme.colors.light) : theme.colors.dark};
-    font-weight: ${(p) => p.bold && `bold`};
+    font-weight: ${p => p.bold && `bold`};
   `,
 
   Socials: styled.section`
@@ -41,7 +41,7 @@ const Styled = {
     display: flex;
     align-items: center;
     color: ${darken(0.3, theme.colors.light)};
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled
