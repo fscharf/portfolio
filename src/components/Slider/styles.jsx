@@ -1,5 +1,5 @@
-import { lighten } from 'polished';
-import styled from 'styled-components';
+import { lighten } from 'polished'
+import styled from 'styled-components'
 
 const Styled = {
   Swiper: styled.section`
@@ -15,9 +15,9 @@ const Styled = {
           height: 12px;
           font-size: 12px;
           opacity: 1;
-          background: ${(p) => lighten(0.3, !p.variant ? '#fff' : p.variant)};
+          background: ${p => lighten(0.3, !p.variant ? '#fff' : p.variant)};
           &-active {
-            background: ${(p) => p.variant};
+            background: ${p => p.variant};
             padding: 8px;
           }
         }
@@ -29,11 +29,11 @@ const Styled = {
         background-image: none;
         &::after {
           font-size: 32px;
-          color: ${(p) => p.variant};
+          color: ${p => p.variant};
         }
       }
     }
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

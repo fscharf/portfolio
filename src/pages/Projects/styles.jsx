@@ -1,6 +1,6 @@
-import { darken } from 'polished';
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import { darken, lighten } from 'polished'
+import styled from 'styled-components'
+import { theme } from '../../theme'
 
 const Styled = {
   Section: styled.section`
@@ -28,7 +28,7 @@ const Styled = {
     gap: 8px;
     align-items: center;
 
-    background-color: ${(p) => p.variant};
+    background-color: ${p => p.variant};
 
     @media (max-width: 768px) {
       justify-content: center;
@@ -38,21 +38,24 @@ const Styled = {
   Tool: styled.span`
     display: flex;
     align-items: center;
+    font-weight: 700;
     gap: 4px;
     text-transform: lowercase;
-    background-color: ${(p) => p.variant};
+    background-color: ${p => p.variant};
     color: #fff;
     padding: 4px;
     border-radius: 8px;
     font-size: 12px;
 
     svg {
-      color: ${(p) => darken(0.2, p.variant)};
+      color: ${p => lighten(0.2, p.variant)};
     }
   `,
 
   ImgWrapper: styled.section`
     width: 55%;
+    border-radius: 16px;
+    height: max-content;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -79,7 +82,7 @@ const Styled = {
 
   Title: styled.h2`
     font-size: 24px;
-    color: ${(p) => (p.variant ? p.variant : theme.colors.light)};
+    color: ${p => (p.variant ? p.variant : theme.colors.light)};
     display: flex;
     align-items: center;
     gap: 8px;
@@ -97,16 +100,10 @@ const Styled = {
     }
   `,
 
-  Strip: styled.hr`
-    margin: 16px 0 0;
-    border-radius: 4px;
-    border: 1px solid ${darken(0.15, theme.colors.light)};
-  `,
-
   Link: styled.a`
     background: transparent;
-    border: 2px solid ${darken(0.2, '#eee')};
-    color: ${(p) => p.variant};
+    border: 2px solid #aeaeae;
+    color: ${p => p.variant};
     padding: 8px;
     display: flex;
     align-items: center;
@@ -114,6 +111,7 @@ const Styled = {
     border-radius: 8px;
     transition: 0.2s ease;
     font-size: 18px;
+    font-weight: 700;
 
     svg {
       width: 20px;
@@ -129,17 +127,21 @@ const Styled = {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 16px;
   `,
 
   Img: styled.img`
     width: 100%;
+    height: 100%;
+
+    box-shadow: 16px 16px 20px 8px #f9f9f990;
     object-fit: cover;
     border-radius: 16px;
-
+  
     @media (max-width: 758px) {
       width: 100%;
     }
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

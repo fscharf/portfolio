@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../theme';
+import styled from 'styled-components'
+import { theme } from '../theme'
 
 const Styled = {
   Main: styled.main`
@@ -13,7 +13,7 @@ const Styled = {
 
   Title: styled.h2`
     font-size: 32px;
-    color: ${(p) => (p.dark ? theme.colors.dark : theme.colors.light)};
+    color: ${p => (p.dark ? theme.colors.dark : theme.colors.light)};
   `,
 
   Subtitle: styled.h4`
@@ -23,15 +23,15 @@ const Styled = {
 
   Text: styled.p`
     font-size: 16px;
-    color: ${(p) => (p.dark ? theme.colors.dark : theme.colors.light)};
+    color: ${p => (p.dark ? theme.colors.dark : theme.colors.light)};
     line-height: 1.6;
   `,
 
   Section: styled.section`
-    height: ${(p) => (p.fullHeight ? `100vh` : `100%`)};
-    ${(p) => p.customStyle && { ...p.customStyle }}
+    height: ${p => (p.fullHeight ? `100vh` : `100%`)};
+    ${p => p.customStyle && { ...p.customStyle }}
     min-width: 100%;
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

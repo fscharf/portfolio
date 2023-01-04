@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import styled from 'styled-components'
+import { theme } from '../../theme'
 
 const Styled = {
   Section: styled.section`
@@ -17,7 +17,7 @@ const Styled = {
   Title: styled.h2`
     font-size: 32px;
     color: ${theme.colors.light};
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

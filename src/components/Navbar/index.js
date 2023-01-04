@@ -1,25 +1,25 @@
-import React, { Fragment, useEffect } from 'react';
-import { FaLinkedinIn } from 'react-icons/fa';
-import { FiGithub } from 'react-icons/fi';
-import * as Hi from 'react-icons/hi';
-import { toggleSidebar } from '..';
-import { useTheme } from '../../contexts/theme';
-import Menu from './components/Menu';
-import ScrollButton from './components/ScrollButton';
-import Socials from './components/Socials';
-import Styled from './styles';
-import { changeLinkState, fixNavbar, toggleScrollButton } from './utils';
+import React, { Fragment, useEffect } from 'react'
+import { FaLinkedinIn } from 'react-icons/fa'
+import { FiGithub } from 'react-icons/fi'
+import * as Hi from 'react-icons/hi'
+import { toggleSidebar } from '..'
+import { useTheme } from '../../contexts/theme'
+import Menu from './components/Menu'
+import ScrollButton from './components/ScrollButton'
+import Socials from './components/Socials'
+import Styled from './styles'
+import { changeLinkState, fixNavbar, toggleScrollButton } from './utils'
 
 const Navbar = () => {
-  const { primaryColor } = useTheme();
+  const { primaryColor } = useTheme()
 
   useEffect(() => {
     window.onscroll = () => {
-      fixNavbar();
-      changeLinkState();
-      toggleScrollButton();
-    };
-  }, []);
+      fixNavbar()
+      changeLinkState()
+      toggleScrollButton()
+    }
+  }, [])
 
   return (
     <Fragment>
@@ -65,27 +65,27 @@ const Navbar = () => {
       <Socials links={links} variant={primaryColor} />
       <ScrollButton variant={primaryColor} />
     </Fragment>
-  );
-};
+  )
+}
 
 export const links = {
   navigation: [
-    { url: '#', text: 'home' },
-    { url: '#skills', text: 'skills' },
-    { url: '#projects', text: 'portfolio' },
+    { url: '#', text: 'Home' },
+    { url: '#skills', text: 'Skills' },
+    { url: '#projects', text: 'Projects' }
   ],
   socials: [
     {
       url: 'https://linkedin.com/in/felipe-scharf',
       text: 'linkedin',
-      icon: <FaLinkedinIn size={28} />,
+      icon: <FaLinkedinIn size={28} />
     },
     {
       url: 'https://github.com/fscharf',
       text: 'github',
-      icon: <FiGithub size={28} />,
-    },
-  ],
-};
+      icon: <FiGithub size={28} />
+    }
+  ]
+}
 
-export default Navbar;
+export default Navbar

@@ -4,15 +4,26 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiReact,
-  SiTypescript,
-} from 'react-icons/si';
-import Personal from '../../assets/images/personal.png';
-import { Tooltip } from '../../components';
-import { useTheme } from '../../contexts/theme';
-import Styled from './styles';
+  SiTypescript
+} from 'react-icons/si'
+import { Tooltip } from '../../components'
+import { useTheme } from '../../contexts/theme'
+import {
+  BgBlob,
+  Column,
+  Flag,
+  Icon,
+  IconsWrapper,
+  Img,
+  ImgWrapper,
+  Section,
+  Subtitle,
+  Text,
+  Title
+} from './styles'
 
 const Home = () => {
-  const { primaryColor } = useTheme();
+  const { primaryColor } = useTheme()
 
   const tools = [
     { title: 'Typescript', icon: <SiTypescript /> },
@@ -20,38 +31,36 @@ const Home = () => {
     { title: 'Next', icon: <SiNextdotjs /> },
     { title: 'CSS3', icon: <SiCss3 /> },
     { title: 'Node', icon: <SiNodedotjs /> },
-    { title: 'Git', icon: <SiGit /> },
-  ];
+    { title: 'Git', icon: <SiGit /> }
+  ]
 
   return (
-    <Styled.Section id="home">
-      <Styled.Column data-aos={`fade-down`}>
-        <Styled.ImgWrapper>
-          <Styled.Img src={Personal} alt={`Personal Image`} />
-          <Styled.BgBlob variant={primaryColor} />
-        </Styled.ImgWrapper>
-      </Styled.Column>
-      <Styled.Column isContent data-aos={`fade-up`}>
-        <Styled.Title>hi, i'm felipe</Styled.Title>
-        <Styled.Subtitle variant={primaryColor}>
-          front-end developer
-        </Styled.Subtitle>
-        <Styled.Text data-aos={`fade-up`}>
-          and a very curious guy.
-          <Styled.Text style={{ fontSize: '12px', color: '#aeaeae' }}>
-            updates soon 👀
-          </Styled.Text>
-        </Styled.Text>
-        <Styled.IconsWrapper>
+    <Section id="home">
+      <Column data-aos={`fade-down`}>
+        <ImgWrapper>
+          <Img src="/personal.png" alt={`Personal Image`} />
+          <BgBlob variant={primaryColor} />
+        </ImgWrapper>
+      </Column>
+      <Column isContent data-aos={`fade-up`}>
+        <Title>Hi, I'm Felipe</Title>
+        <Subtitle>Frontend Engineer</Subtitle>
+        <Text data-aos={`fade-up`}>
+          Through constant learning and practice, I'm a tech enthusiast who
+          loves coding, gaming and coffee.
+          <br />
+          <Flag bgColor={primaryColor}>Updates soon 👀</Flag>
+        </Text>
+        <IconsWrapper>
           {tools.map((tool, index) => (
             <Tooltip key={index} text={tool.title}>
-              <Styled.Icon>{tool.icon}</Styled.Icon>
+              <Icon>{tool.icon}</Icon>
             </Tooltip>
           ))}
-        </Styled.IconsWrapper>
-      </Styled.Column>
-    </Styled.Section>
-  );
-};
+        </IconsWrapper>
+      </Column>
+    </Section>
+  )
+}
 
-export default Home;
+export default Home

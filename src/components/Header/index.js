@@ -1,5 +1,5 @@
-import { Navbar, ThemeSidebar } from '..';
-import Styled from './styles';
+import { Navbar, ThemeSidebar } from '..'
+import Styled from './styles'
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <Navbar />
       <ThemeSidebar />
     </Styled.Header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

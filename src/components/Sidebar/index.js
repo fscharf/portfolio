@@ -1,5 +1,5 @@
-import { HiOutlineX } from 'react-icons/hi';
-import Styled from './styles';
+import { HiOutlineX } from 'react-icons/hi'
+import Styled from './styles'
 
 const Sidebar = ({ children, id, title }) => {
   return (
@@ -16,13 +16,13 @@ const Sidebar = ({ children, id, title }) => {
       </Styled.Header>
       <Styled.Wrapper>{children}</Styled.Wrapper>
     </Styled.Aside>
-  );
-};
+  )
+}
 
-const toggleSidebar = (id) => {
-  const sidebar = document.getElementById(id);
+const toggleSidebar = id => {
+  const sidebar = document.getElementById(id)
 
-  sidebar.classList.toggle('open');
-};
+  sidebar.classList.toggle('open')
+}
 
-export { Sidebar, toggleSidebar };
+export { Sidebar, toggleSidebar }

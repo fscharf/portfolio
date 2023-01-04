@@ -1,8 +1,8 @@
-import { memo } from 'react';
-import { Sidebar, toggleSidebar } from '..';
-import { useTheme } from '../../contexts/theme';
+import { memo } from 'react'
+import { Sidebar, toggleSidebar } from '..'
+import { useTheme } from '../../contexts/theme'
 
-import Styled from './styles';
+import Styled from './styles'
 
 const ThemeSidebar = () => {
   const colors = [
@@ -13,11 +13,11 @@ const ThemeSidebar = () => {
     '#545454',
     '#dbbf1f',
     '#cc29b3',
-    '#d65504',
-  ];
-  const { primaryColor, setPrimaryColor } = useTheme();
+    '#d65504'
+  ]
+  const { primaryColor, setPrimaryColor } = useTheme()
 
-  const elementId = 'colorSidebar';
+  const elementId = 'colorSidebar'
 
   return (
     <Sidebar title={`choose your theme`} id={elementId}>
@@ -31,14 +31,14 @@ const ThemeSidebar = () => {
             checked={primaryColor === color}
             key={index}
             onChange={() => {
-              setPrimaryColor(color);
-              window.innerWidth < 768 && toggleSidebar(elementId);
+              setPrimaryColor(color)
+              window.innerWidth < 768 && toggleSidebar(elementId)
             }}
           />
         ))}
       </Styled.Wrapper>
     </Sidebar>
-  );
-};
+  )
+}
 
-export default memo(ThemeSidebar);
+export default memo(ThemeSidebar)

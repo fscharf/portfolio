@@ -1,6 +1,6 @@
-import { darken } from 'polished';
-import styled, { keyframes } from 'styled-components';
-import { theme } from '../../theme';
+import { darken } from 'polished'
+import styled, { keyframes } from 'styled-components'
+import { theme } from '../../theme'
 
 const rotate = keyframes`
   from {
@@ -9,12 +9,12 @@ const rotate = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 
 const Styled = {
   Nav: styled.nav`
     width: 100%;
-    padding: 32px 16px;
+    padding: 32px 0;
     display: flex;
     justify-content: center;
     transition: all 0.3s ease;
@@ -23,8 +23,9 @@ const Styled = {
     left: 0;
     z-index: 99;
     &.fixed {
-      padding: 16px;
-      background: ${theme.colors.dark};
+      padding: 16px 0;
+      background: rgba(19, 19, 19, 0.8);
+      backdrop-filter: blur(24px);
     }
   `,
 
@@ -39,7 +40,7 @@ const Styled = {
     gap: 24px;
 
     a:hover {
-      color: ${(p) => p.variant};
+      color: ${p => p.variant};
     }
 
     @media (max-width: 768px) {
@@ -64,7 +65,7 @@ const Styled = {
 
     &.highlight {
       border-radius: 50%;
-      background: ${(p) => p.variant};
+      background: ${p => p.variant};
       padding: 8px;
     }
 
@@ -98,9 +99,10 @@ const Styled = {
     display: flex;
     align-items: center;
     font-size: 24px;
+    font-weight: 800;
 
     svg {
-      color: ${(p) => p.variant};
+      color: ${p => p.variant};
       animation: ${rotate} 6s infinite;
       margin: 0 -4px;
     }
@@ -118,7 +120,7 @@ const Styled = {
     align-items: center;
     justify-content: end;
     gap: 16px;
-  `,
-};
+  `
+}
 
-export default Styled;
+export default Styled

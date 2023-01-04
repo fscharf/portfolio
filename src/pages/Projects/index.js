@@ -1,29 +1,29 @@
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa'
 import {
   HiBadgeCheck,
   HiOutlineCloudUpload,
   HiOutlineEye,
-  HiTag,
-} from 'react-icons/hi';
-import { Slider } from '../../components';
-import { useTheme } from '../../contexts/theme';
-import { projects } from '../../data';
-import Styled from './styles';
+  HiTag
+} from 'react-icons/hi'
+import { Slider } from '../../components'
+import { useTheme } from '../../contexts/theme'
+import { projects } from '../../data'
+import Styled from './styles'
 
 const Projects = () => {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
-      return `<span key="${index}" class="${className}"></span>`;
-    },
-  };
-  const { primaryColor } = useTheme();
+      return `<span key="${index}" class="${className}"></span>`
+    }
+  }
+  const { primaryColor } = useTheme()
 
   return (
     <Styled.Section id="projects" fullHeight>
       <Slider className={`swiperSlider`} pagination={pagination}>
         {projects.map((project, index) => {
-          const { images } = project;
+          const { images } = project
 
           return (
             <Styled.Container key={index}>
@@ -77,7 +77,6 @@ const Projects = () => {
                     <FaGithub /> source
                   </Styled.Link>
                 </Styled.LinkWrapper>
-                <Styled.Strip />
 
                 <Styled.Tools>
                   {project.tools.map((tool, index) => (
@@ -89,11 +88,11 @@ const Projects = () => {
                 </Styled.Tools>
               </Styled.Wrapper>
             </Styled.Container>
-          );
+          )
         })}
       </Slider>
     </Styled.Section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

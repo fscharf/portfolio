@@ -1,4 +1,4 @@
-import Styled from '../styles';
+import Styled from '../styles'
 
 const Socials = ({ links, variant }) => {
   return (
@@ -15,6 +15,6 @@ const Socials = ({ links, variant }) => {
         </Styled.NavLink>
       ))}
     </Styled.Socials>
-  );
-};
-export default Socials;
+  )
+}
+export default Socials
