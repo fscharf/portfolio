@@ -1,6 +1,6 @@
 import { darken, lighten } from 'polished'
 import styled from 'styled-components'
-import { theme } from '../../theme'
+import { theme } from '../../theme/global-style'
 
 const Styled = {
   Section: styled.section`
@@ -137,7 +137,7 @@ const Styled = {
     box-shadow: 16px 16px 20px 8px #f9f9f990;
     object-fit: cover;
     border-radius: 16px;
-  
+
     @media (max-width: 758px) {
       width: 100%;
     }
