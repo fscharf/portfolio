@@ -5,7 +5,7 @@ export * from './theme'
 
 export const GlobalStyles = createGlobalStyle`
   * {
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    font-family: 'Figtree', 'Segoe UI', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,9 +19,8 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
   body {
-    color: ${theme.colors.dark};   
-    background: url(/background.svg) no-repeat center top;
-    background-size: cover;
+    color: ${theme.colors.dark}; 
+    background-color: #0D0D0D;
 
     @media (min-width: 1024px) {     
       display: flex;
